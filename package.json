@@ -1,0 +1,27 @@
+{
+  "name": "itechartwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmosienski/itechartwebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wmosienski/itechartwebsite/issues"
+  },
+  "homepage": "https://github.com/wmosienski/itechartwebsite#readme",
+  "dependencies": {
+    "itechartwrapper": "0.0.2",
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
