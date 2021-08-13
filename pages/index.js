@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
-import { Hamburger, Logo, Divider, defaultTheme } from 'itechartsitewrapper';
+import { defaultTheme } from 'itechartsitewrapper';
+import SiteHeader from '../components/SiteHeader';
 
 export default class extends Component {
   render () {
     return (
       <ThemeProvider theme={defaultTheme}>
-          <Hamburger color='red' />
-          <Logo />
-          <Divider />
+        <SiteHeader />
+        {[...Array(100)].map(() => (
+          <div>content</div>
+        ))}
       </ThemeProvider>
     );
   }
