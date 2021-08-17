@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { SiteHeader, Hamburger, Logo, HeaderLinkDotted } from 'itechartsitewrapper';
-import WithScrolled from 'itechartsitewrapper/dist/core/helpers/WithScrolled/';
-import MenuLinkList from 'itechartsitewrapper/dist/core/MenuLinkList';
+import { SiteHeader, Hamburger, Logo, HeaderLinkDotted, MenuLinkList, WithScrolled, Box } from 'itechartsitewrapper';
 import MENU_LINKS from '../mocks/MENU_LINKS';
 
 const SiteHeaderExample = ({ scrolled, ...siteHeaderProps }) => {
@@ -14,17 +12,19 @@ const SiteHeaderExample = ({ scrolled, ...siteHeaderProps }) => {
           isOpen={isOpen}
           leftNodes={[<Logo key="logo" />]}
           rightNodes={[
-            <HeaderLinkDotted text='How we work' />,
-            <HeaderLinkDotted text='Blog' />,
-            <HeaderLinkDotted text='Portfolio' />,
-            <HeaderLinkDotted text='About us' />,
-            <Hamburger key="hamburger" color="red" onClick={toggleOpen} />
+            <Box px={5}><HeaderLinkDotted text='How we work' /></Box>,
+            <Box px={5}><HeaderLinkDotted text='Blog' /></Box>,
+            <Box px={5}><HeaderLinkDotted text='Portfolio' /></Box>,
+            <Box px={5}><HeaderLinkDotted text='About us' /></Box>,
+            <Box px={5}><Hamburger key="hamburger" color="red" onClick={toggleOpen} /></Box>
           ]}
           {...siteHeaderProps}
       >
-        <MenuLinkList 
-          mocks={MENU_LINKS}
-        />
+        <Box pt={2}>
+          <MenuLinkList 
+            mocks={MENU_LINKS}
+          />
+        </Box>
       </SiteHeader>
   );
 };
