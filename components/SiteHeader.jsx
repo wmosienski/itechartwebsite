@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { SiteHeader, Hamburger, Logo } from 'itechartsitewrapper';
+import { SiteHeader, Hamburger, Logo, HeaderLinkDotted } from 'itechartsitewrapper';
 import WithScrolled from 'itechartsitewrapper/dist/core/helpers/WithScrolled/';
-import LinkAlignedWithIcon from 'itechartsitewrapper/dist/core/LinkAlignedWithIcon';
-import dot from '../assets/images/dot.svg';
+import MenuLinkList from 'itechartsitewrapper/dist/core/MenuLinkList';
+import MENU_LINKS from '../mocks/MENU_LINKS';
 
 const SiteHeaderExample = ({ scrolled, ...siteHeaderProps }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,23 +14,18 @@ const SiteHeaderExample = ({ scrolled, ...siteHeaderProps }) => {
           isOpen={isOpen}
           leftNodes={[<Logo key="logo" />]}
           rightNodes={[
-            <LinkAlignedWithIcon 
-              text='How we work'
-              position='down'
-              size={10}
-              isLinkActive={true}
-              icon={dot.src}
-              onMouseEnter={() => {}}
-              fontSize={24}
-              fontWeight={400}
-              textTransform='inherit'
-              color='#868686'
-              colorOnHover='#FFFFFF'
-            />,
+            <HeaderLinkDotted text='How we work' />,
+            <HeaderLinkDotted text='Blog' />,
+            <HeaderLinkDotted text='Portfolio' />,
+            <HeaderLinkDotted text='About us' />,
             <Hamburger key="hamburger" color="red" onClick={toggleOpen} />
           ]}
           {...siteHeaderProps}
-      />
+      >
+        <MenuLinkList 
+          mocks={MENU_LINKS}
+        />
+      </SiteHeader>
   );
 };
 
